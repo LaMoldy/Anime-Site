@@ -17,18 +17,22 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Ani-Hub</h1>
-      <input
-        onChange={(e) => setInput(e.target.value)}
-        type="text"
-        placeholder="Anime name" />
-      <button onClick={onSearch}>
-        Search
-      </button>
-      { anime !== null &&
+    <div className={"background"}>
+      <div className={"flex-row center"}>
+        <h1 className={"page-title"}>Ani-Hub</h1>
+        <input
+          className={"home-search-bar"}
+          onChange={(e) => setInput(e.target.value)}
+          type="text"
+          placeholder="Anime Name" />
+        <button
+          onClick={onSearch}
+          className={"search-button"}>
+          Search
+        </button>
+      </div>
+      { (anime.title_english !== null && anime.title_english !== "") &&
         <>
-          <h1>{anime.title_japanese}</h1>
           <AnimeCard image={anime.images.jpg.image_url} title={anime.title_english} />
         </>
       }
