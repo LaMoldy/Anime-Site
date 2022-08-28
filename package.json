@@ -14,17 +14,12 @@
     "@types/node": "^16.11.56",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-<<<<<<< HEAD
     "axios": "^0.27.2",
-=======
     "assert": "^2.0.0",
     "cheerio": "^1.0.0-rc.12",
->>>>>>> c44a83c5dd4d31d457f75dddfcf071c5806c4f6d
     "concurrently": "^7.3.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "crunchyroll.js": "^1.0.1",
-    "eloquent-ffmpeg": "^0.14.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "m3u8-parser": "^5.0.0",
