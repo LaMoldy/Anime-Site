@@ -1,10 +1,10 @@
 import './App.css';
-import {ChangeEvent, useCallback, useEffect, useState} from 'react';
-import {Mal} from "./services/mal";
-import {MALAnime} from "./interfaces/malTypes";
-import {AnimeCard} from "./components/anime-card";
+import { ChangeEvent, useCallback, useEffect, useState, FC } from 'react';
+import { Mal } from "./services/mal";
+import { MALAnime } from "./interfaces/malTypes";
+import { AnimeCard } from "./components/anime-card";
 
-function App() {
+const App: FC = () => {
     const [searchedAnime, setSearchedAnime] = useState<MALAnime[]>([]);
     const [input, setInput] = useState("");
     const [searching, setSearching] = useState(false);
@@ -55,8 +55,7 @@ function App() {
             <div className="flex-row space-evenly anime-list">
                 {searchedAnime.map(data =>
                     <AnimeCard
-                        image={data.images.jpg.image_url}
-                        title={data.title_english}
+                        anime={data}
                         key={data.mal_id} />
                 )}
             </div>
@@ -65,8 +64,7 @@ function App() {
             <div className="flex-row space-evenly anime-list">
                 {animeList.map(data =>
                 <AnimeCard
-                    image={data.images.jpg.image_url}
-                    title={data.title_english}
+                    anime={data}
                     key={data.mal_id} />
                 )}
               </div>
