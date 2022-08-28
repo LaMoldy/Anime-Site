@@ -1,5 +1,5 @@
 import axios from "axios";
-import {MALAnime} from "../interfaces/malTypes";
+import {MALAnime} from "../utils/malTypes";
 
 export class Mal {
     private static BASE_URL: string = "https://api.jikan.moe/v4";

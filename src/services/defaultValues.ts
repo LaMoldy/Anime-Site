@@ -1,4 +1,4 @@
-import {MALAnime} from "../interfaces/malTypes";
+import { MALAnime } from "../utils/malTypes";
 
 export const defaultMALAnime: MALAnime = {
     aired: {},

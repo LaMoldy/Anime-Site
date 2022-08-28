@@ -1,0 +1,47 @@
+.page-title {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-evenly {
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+}
+
+.home-search-bar {
+    margin: 3px;
+    width: 60vw;
+    border-radius: 7px;
+    padding: 6px;
+    border: 0 solid transparent;
+    text-align: center;
+}
+
+.home-search-bar:focus {
+    outline: none;
+}
+
+.center {
+    margin: auto;
+}
+
+.search-button {
+    width: 10vw;
+    border: 0px solid transparent;
+    border-radius: 20px;
+    padding: 3px;
+    margin-top: 3px;
+}
