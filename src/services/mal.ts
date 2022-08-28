@@ -12,6 +12,12 @@ export class Mal {
 
     public static async getAnime(animeName: string) {
         const animes: MALAnime[] = await this.searchAnime(animeName);
-        return animes[0];
+        return animes;
+    }
+
+    public static async getAllAnime() {
+        const response = await axios.get(`${this.BASE_URL}/anime`);
+        const { data: animes } = response.data;
+        return animes;
     }
 }
