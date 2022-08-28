@@ -1,23 +1,23 @@
-import {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
+import {ChangeEvent, useCallback, useEffect, useState} from 'react';
 import {Mal} from "./services/mal";
 import {MALAnime} from "./interfaces/malTypes";
 import {AnimeCard} from "./components/anime-card";
-import {defaultMALAnime} from "./services/defaultValues";
 
 function App() {
   const [searchedAnime, setSearchedAnime] = useState<MALAnime[]>([]);
   const [input, setInput] = useState("");
   const [searching, setSearching] = useState(false);
   const [animeList, setAnimeList] = useState<MALAnime[]>([]);
-  const [loaded, setLoaded] = useState(false);
+
+  const fetchData = useCallback(async () => {
+      const animes = await Mal.getAllAnime();
+      setAnimeList(animes);
+  }, [setAnimeList]);
 
   useEffect(() => {
-    if (!loaded) {
-      loadAllAnime();
-      setLoaded(true);
-    }
-  })
+    fetchData();
+  }, [fetchData]);
 
   function searchAnime() {
     if (input === "") {
@@ -26,22 +26,12 @@ function App() {
       setSearching(true)
       Mal.getAnime(input).then(data => {
         setSearchedAnime(data);
-        console.log("Data:")
-        console.log(data);
       });
     }
-
   }
 
   function updateInput(event: ChangeEvent<HTMLInputElement>) {
     setInput(event.target.value);
-  }
-
-  function loadAllAnime() {
-    Mal.getAllAnime().then(data => {
-      setAnimeList(data);
-      console.log(data);
-    });
   }
 
   return (
