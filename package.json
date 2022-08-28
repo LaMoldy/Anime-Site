@@ -14,13 +14,27 @@
     "@types/node": "^16.11.56",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+<<<<<<< HEAD
     "axios": "^0.27.2",
+=======
+    "assert": "^2.0.0",
+    "cheerio": "^1.0.0-rc.12",
+>>>>>>> c44a83c5dd4d31d457f75dddfcf071c5806c4f6d
     "concurrently": "^7.3.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
+    "crunchyroll.js": "^1.0.1",
+    "eloquent-ffmpeg": "^0.14.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "m3u8-parser": "^5.0.0",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
+    "react-native": "^0.69.5",
     "react-scripts": "5.0.1",
+    "request": "^2.88.2",
     "typescript": "^4.8.2",
     "wait-on": "^6.0.1",
     "web-vitals": "^2.1.4"
@@ -37,6 +51,11 @@
     "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
     "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/main.js",
     "electron:start": "wait-on tcp:3000 && electron ."
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "build": {
     "extends": null,
@@ -68,5 +87,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
