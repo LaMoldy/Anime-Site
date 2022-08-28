@@ -4,12 +4,15 @@ function createWindow() {
     const window = new BrowserWindow({
         width: 800,
         height: 600,
+        autoHideMenuBar: true,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true,
         }
     });
 
     window.loadURL("http://localhost:3000");
+    window.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {

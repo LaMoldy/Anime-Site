@@ -1,0 +1,19 @@
+.card {
+    height: 200px;
+    width: 150px;
+}
+
+.card:hover {
+    filter: brightness(50%);
+    cursor: pointer;
+}
+
+.card-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.card-title {
+    text-align: center;
+}
