@@ -23,11 +23,12 @@ export const AnimePage: FC = () => {
 
 return (
     <div className="flex-column center">
-      <a href="/" className="backButton"><img className="homeImg" src='https://cdn-icons-png.flaticon.com/512/25/25694.png'/></a>
+      <a href="/" className="backButton"><img alt="Home Button" className="homeImg" src='https://www.nicepng.com/png/full/115-1153942_white-home-icon-png-white-home-logo-transparent.png'/></a>
       <img
           className="animeImage"
-        src={anime?.images.jpg.image_url}/>
-      <h6 className="animeTitle">{anime?.title_english}</h6>
+          alt="Image of Anime"
+          src={anime?.images.jpg.image_url}/>
+      <h3 className="animeTitle">{anime?.title_english === null ? anime.title_japanese : anime?.title_english}</h3>
       <p>{anime?.synopsis}</p>
     </div>
 )
