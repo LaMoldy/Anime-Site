@@ -21,22 +21,30 @@ export const AnimePage: FC = () => {
     }, [getAnime]);
 
     return (
-        <div className="flex-column center">
-            <a
-                href="/"
-                className="backButton">
+        <div>
+            <div className="titleBar">
+                <a href={anime.url} target="_blank" rel="noopener noreferrer" >
+                    <h3 className="animeTitle">{anime.title_english === null ? anime.title_japanese : anime.title_english} ({anime.score}/10)</h3>
+                </a>
+                <h5>Episodes: {anime.episodes} ({anime.duration})</h5>
+            </div>
+            <div className="flex-row flex-center" id="anime-content">
+                <a
+                    href="/"
+                    className="backButton">
+                    <img
+                        alt="Home Button"
+                        className="homeImg"
+                        src='https://www.nicepng.com/png/full/115-1153942_white-home-icon-png-white-home-logo-transparent.png' />
+                </a>
                 <img
-                    alt="Home Button"
-                    className="homeImg"
-                    src='https://www.nicepng.com/png/full/115-1153942_white-home-icon-png-white-home-logo-transparent.png' />
-            </a>
-            <img
-                className="animeImage"
-                alt="Image of Anime"
-                src={anime?.images.jpg.image_url} />
-            <h3 className="animeTitle">{anime.title_english === null ? anime.title_japanese : anime.title_english} ({anime.score}/10)</h3>
-            <h5>Episodes: {anime.episodes} ({anime.duration})</h5>
-            <p>{anime?.synopsis}</p>
+                    className="animeImage"
+                    alt="Image of Anime"
+                    src={anime?.images.jpg.image_url} />
+                <div className="anime-syn">
+                    <p>{anime?.synopsis}</p>
+                </div>
+            </div>
         </div>
     )
 

@@ -2,22 +2,46 @@ body {
     color: #DFEEEE;
 }
 .animeImage {
-    height: 25%;
-    width: 25%;
+    height: 75%;
+    width: auto;
     border-radius: 3px;
     margin-top:5px;
 }
 .backButton {
-    position: fixed;
-    left: 0;
+    position: absolute;
+    right: 10px;
+    top:13px;
 }
 .homeImg{
     height: 30px;
     width: 33px;
 }
-.flex-column {
+.flex-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
-
+.flex-center{
+    justify-content: space-evenly;
+    justify-items: center;
+}
+.titleBar{
+    background-color: #8961EE;
+    box-shadow: 5px 5px 8px 1px black;
+    border-radius: 3px;
+    padding: 8px;
+    padding-bottom: 10px;
+}
+#anime-content{
+    width: 100vw;
+    height: 80vh;
+}
+.anime-syn{
+    width: 60%;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: #a7a499;
+}
