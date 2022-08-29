@@ -28,7 +28,8 @@ return (
           className="animeImage"
           alt="Image of Anime"
           src={anime?.images.jpg.image_url}/>
-      <h3 className="animeTitle">{anime?.title_english === null ? anime.title_japanese : anime?.title_english}</h3>
+      <h3 className="animeTitle">{anime?.title_english === null ? anime.title_japanese : anime?.title_english} ({anime?.score}/10)</h3>
+      <h5>Episodes: {anime?.episodes} ({anime?.duration})</h5>
       <p>{anime?.synopsis}</p>
     </div>
 )
