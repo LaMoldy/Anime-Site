@@ -59,7 +59,8 @@ export const Home: FC = () => {
         )}
         {!searching && (
           <div className={"flex-row space-evenly anime-list"}>
-            {animeList.map((data) => (
+            {
+              animeList.map((data) => (
               <AnimeCard anime={data} key={data.mal_id} />
             ))}
           </div>

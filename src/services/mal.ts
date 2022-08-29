@@ -15,6 +15,12 @@ export class Mal {
         return animes;
     }
 
+    public static async getAnimeById(id: number) {
+        const response = await axios.get(`${this.BASE_URL}/anime/${id}/full`);
+        const {data: anime} = response.data;
+        return anime;
+    }
+
     public static async getAllAnime() {
         const response = await axios.get(`${this.BASE_URL}/anime`);
         const { data: animes } = response.data;

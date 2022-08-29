@@ -1,0 +1,22 @@
+body {
+    color: #DFEEEE;
+}
+.animeImage {
+    height: 25%;
+    width: 25%;
+}
+.backButton {
+    text-decoration: none;
+    position: fixed;
+    left: 0;
+}
+.homeImg{
+    height: 30px;
+    width: 30px;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
