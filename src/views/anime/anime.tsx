@@ -15,7 +15,7 @@ export const AnimePage: FC = () => {
             const res = await Mal.getAnimeById(Number.parseInt(id));
             setAnime(res);
         }
-    }, [setAnime]);
+    }, [setAnime, id]);
 
     useEffect(() => {
         getAnime()
@@ -35,7 +35,7 @@ export const AnimePage: FC = () => {
             <div className="flex-row flex-center" id="anime-content">
                 <img
                     className="animeImage"
-                    alt="Image of Anime"
+                    alt="Poster of The Anime"
                     src={anime?.images.jpg.image_url} />
                 <div className="anime-syn">
                     <p>{anime?.synopsis}</p>
