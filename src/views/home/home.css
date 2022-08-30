@@ -13,6 +13,7 @@
 .flex-row {
     display: flex;
     flex-direction: row;
+    text-decoration: none;
 }
 
 .space-evenly {
@@ -41,7 +42,7 @@
 
 .search-button {
     width: 10vw;
-    border: 0px solid transparent;
+    border: 0 solid transparent;
     border-radius: 20px;
     padding: 3px;
     margin-top: 3px;

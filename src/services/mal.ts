@@ -17,7 +17,13 @@ export class Mal {
 
     public static async getAllAnime(pageCount: number) {
         const response = await axios.get(`${this.BASE_URL}/anime?page=${pageCount}`);
-        const { data: animes } = response.data;
-        return animes;
+        const { data: anime } = response.data;
+        return anime;
+    }
+
+    public static async getAnimeById(id: number) {
+        const response = await axios.get(`${this.BASE_URL}/anime/${id}/full`);
+        const {data: anime} = response.data;
+        return anime;
     }
 }
