@@ -53,3 +53,16 @@ export interface Image {
    large_image_url: string,
    small_image_url: string
 }
+
+export interface MALRecommended {
+    entry: MALEntry,
+    url: string,
+    votes: number
+}
+
+export interface MALEntry {
+    mal_id: number,
+    url: string,
+    images: MALImage,
+    title: string
+}

@@ -1,4 +1,5 @@
 import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
+import { ROUTES } from "../../App";
 import { AnimeCard } from "../../components/anime-card";
 import { Mal } from "../../services/mal";
 import { MALAnime } from "../../utils/malTypes";
@@ -52,6 +53,7 @@ export const Home: FC = () => {
             <div>
                 <div className={"flex-column center"}>
                     <h1 className={"page-title"}>Ani-Hub</h1>
+                    <a href={ROUTES.recommended}>Recommended</a>
                     <input
                         className={"home-search-bar"}
                         onChange={updateInput}
@@ -66,17 +68,30 @@ export const Home: FC = () => {
                 <br></br>
                 {searching && (
                     <div className={"flex-row space-evenly anime-list"}>
-                        {searchedAnime.map((data) => (
-                            <AnimeCard anime={data} key={data.mal_id} />
-                        ))}
+                        {
+                            searchedAnime.map((data) => (
+                                <AnimeCard 
+                                    image={data.images.jpg.image_url} 
+                                    key={data.mal_id} 
+                                    titleEnglish={data.title_english}
+                                    titleJapanese={data.title_japanese}
+                                    malId={data.mal_id} />
+                            ))
+                        }
                     </div>
                 )}
                 {!searching && (
                     <div className={"flex-row space-evenly anime-list"}>
                         {
                             animeList.map((data) => (
-                                <AnimeCard anime={data} key={data.mal_id} />
-                            ))}
+                                <AnimeCard 
+                                    image={data.images.jpg.image_url} 
+                                    key={data.mal_id} 
+                                    titleEnglish={data.title_english}
+                                    titleJapanese={data.title_japanese}
+                                    malId={data.mal_id} />
+                            ))
+                        }
                     </div>
                 )}
                 <br></br>

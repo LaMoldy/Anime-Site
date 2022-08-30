@@ -23,7 +23,13 @@ export class Mal {
 
     public static async getAnimeById(id: number) {
         const response = await axios.get(`${this.BASE_URL}/anime/${id}/full`);
-        const {data: anime} = response.data;
+        const { data: anime } = response.data;
+        return anime;
+    }
+
+    public static async getRecommendedAnime() {
+        const response = await axios.get(`${this.BASE_URL}/anime/1/recommendations`);
+        const { data: anime } = response.data;
         return anime;
     }
 }

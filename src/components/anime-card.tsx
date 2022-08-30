@@ -1,22 +1,24 @@
 import { FC } from "react";
-import { MALAnime } from "../utils/malTypes";
+import { MALAnime, MALImage } from "../utils/malTypes";
 import {ROUTETO} from "../App";
 import "./anime-card.css";
 
 interface AnimeProps {
-    anime: MALAnime
+    image: string,
+    titleEnglish: string,
+    titleJapanese: string,
+    malId: number
 }
 
 export const AnimeCard: FC<AnimeProps> = (props: AnimeProps) => {
     return (
         <div className={"card"}>
-            <a href={ROUTETO.routeToAnime(props.anime.mal_id.toString())}>
+            <a href={ROUTETO.routeToAnime(props.malId.toString())}>
                 <img
-                    className={"card-image"} src={props.anime.images.jpg.image_url}
+                    className={"card-image"} src={props.image}
                     alt={"Anime Thumbnail"} />
-                <h6 className={"card-title"}>{props.anime.title_english === null ? props.anime.title_japanese : props.anime.title_english}</h6>
+                <h6 className={"card-title"}>{props.titleEnglish === null ? props.titleJapanese: props.titleEnglish}</h6>
             </a>
-
         </div>
     )
 }

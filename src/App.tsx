@@ -2,21 +2,16 @@ import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Home } from "./views/home/home";
-import {AnimePage} from "./views/anime/anime";
+import { AnimePage } from "./views/anime/anime";
+import { RecommendedPage } from "./views/recommendedPage/recommendedPage";
 
-/**
- * Example of another route
- * <Route path="blogs" element={<Blogss />} />
- *
- * To go to one of those pages use:
- * <Link to="/blogs">
- */
 export const ROUTES = {
-  animePage: `/anime/:id`
+    animePage: `/anime/:id`,
+    recommended: "/recommended"
 }
 
 export const ROUTETO = {
-  routeToAnime: (id:string) => `${ROUTES.animePage}`.replace(':id',id)
+    routeToAnime: (id:string) => `${ROUTES.animePage}`.replace(':id',id)
 }
 
 
@@ -26,6 +21,7 @@ const App: FC = () => {
             <Routes>
                 <Route index element={<Home />} />
                 <Route path={ROUTES.animePage} element={<AnimePage />} />
+                <Route path={ROUTES.recommended} element={<RecommendedPage /> } />
             </Routes>
         </BrowserRouter>
     );
