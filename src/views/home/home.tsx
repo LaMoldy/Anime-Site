@@ -1,6 +1,7 @@
 import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
 import { ROUTES } from "../../App";
 import { AnimeCard } from "../../components/anime-card";
+import { Hamburger } from "../../components/hamburger/hamburger";
 import { Mal } from "../../services/mal";
 import { MALAnime } from "../../utils/malTypes";
 import "./home.css";
@@ -51,9 +52,9 @@ export const Home: FC = () => {
     return (
         <div>
             <div>
+                <Hamburger />
                 <div className={"flex-column center"}>
                     <h1 className={"page-title"}>Ani-Hub</h1>
-                    <a href={ROUTES.recommended}>Recommended</a>
                     <input
                         className={"home-search-bar"}
                         onChange={updateInput}

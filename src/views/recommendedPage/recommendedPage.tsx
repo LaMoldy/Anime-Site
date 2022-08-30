@@ -1,5 +1,6 @@
 import { FC, useEffect, useCallback, useState } from "react";
 import { AnimeCard } from "../../components/anime-card";
+import { Hamburger } from "../../components/hamburger/hamburger";
 import { Mal } from "../../services/mal";
 import { MALRecommended } from "../../utils/malTypes";
 import "./recommendedPage.css";
@@ -18,6 +19,7 @@ export const RecommendedPage: FC = () => {
 
     return (
         <div>
+            <Hamburger />
             <h1 className={"text-center page-title"}>Recommendations</h1>
             <div className={"flex-row space-evenly"}>
                 {

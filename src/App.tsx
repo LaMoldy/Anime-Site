@@ -6,8 +6,10 @@ import { AnimePage } from "./views/anime/anime";
 import { RecommendedPage } from "./views/recommendedPage/recommendedPage";
 
 export const ROUTES = {
+    home: "/",
     animePage: `/anime/:id`,
-    recommended: "/recommended"
+    recommended: "/recommended",
+    watchlist: "/watchlist"
 }
 
 export const ROUTETO = {
