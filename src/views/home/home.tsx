@@ -86,6 +86,7 @@ export const Home: FC = () => {
                     ))}
                   </div>
                 )}
+                <br></br>
                 <div className={"flex-row space-evenly"}>
                     <button
                         className={"page-button margin-right"}
@@ -98,6 +99,8 @@ export const Home: FC = () => {
                         Next
                     </button>
                 </div>
+                <br></br>
+                <br></br>
             </div>
         </div>
     );
