@@ -33,13 +33,6 @@ export const Home: FC = () => {
 
     function updateInput(event: ChangeEvent<HTMLInputElement>) {
         setInput(event.target.value);
-        
-        if (input !== "") {
-            setSearching(true);
-        }
-        else {
-            setSearching(false);
-        }
     }
 
     function increasePageCount() {
@@ -72,19 +65,19 @@ export const Home: FC = () => {
                 <br></br>
                 <br></br>
                 {searching && (
-                  <div className={"flex-row space-evenly anime-list"}>
-                    {searchedAnime.map((data) => (
-                        <AnimeCard anime={data} key={data.mal_id} />
-                    ))}
-                  </div>
+                    <div className={"flex-row space-evenly anime-list"}>
+                        {searchedAnime.map((data) => (
+                            <AnimeCard anime={data} key={data.mal_id} />
+                        ))}
+                    </div>
                 )}
                 {!searching && (
-                  <div className={"flex-row space-evenly anime-list"}>
-                    {
-                        animeList.map((data) => (
-                        <AnimeCard anime={data} key={data.mal_id} />
-                    ))}
-                  </div>
+                    <div className={"flex-row space-evenly anime-list"}>
+                        {
+                            animeList.map((data) => (
+                                <AnimeCard anime={data} key={data.mal_id} />
+                            ))}
+                    </div>
                 )}
                 <br></br>
                 <div className={"flex-row space-evenly"}>

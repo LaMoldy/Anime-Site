@@ -20,8 +20,10 @@
 .card-title {
     text-align: center;
     color: white;
+    height: 30px;
     font-weight: normal;
     letter-spacing: 1px;
+    overflow: hidden;
 }
 a{
     text-decoration: none;
