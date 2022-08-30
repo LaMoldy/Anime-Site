@@ -15,8 +15,8 @@ export class Mal {
         return animes;
     }
 
-    public static async getAllAnime() {
-        const response = await axios.get(`${this.BASE_URL}/anime`);
+    public static async getAllAnime(pageCount: number) {
+        const response = await axios.get(`${this.BASE_URL}/anime?page=${pageCount}`);
         const { data: animes } = response.data;
         return animes;
     }
