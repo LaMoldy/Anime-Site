@@ -72,18 +72,19 @@ export const Home: FC = () => {
                 <br></br>
                 <br></br>
                 {searching && (
-                    <div className={"flex-row space-evenly anime-list"}>
-                        {searchedAnime.map((data) => (
-                            <AnimeCard anime={data} key={data.mal_id} />
-                        ))}
-                    </div>
+                  <div className={"flex-row space-evenly anime-list"}>
+                    {searchedAnime.map((data) => (
+                        <AnimeCard anime={data} key={data.mal_id} />
+                    ))}
+                  </div>
                 )}
                 {!searching && (
-                    <div className={"flex-row space-evenly anime-list"}>
-                        {animeList.map((data) => (
-                            <AnimeCard anime={data} key={data.mal_id} />
-                        ))}
-                    </div>
+                  <div className={"flex-row space-evenly anime-list"}>
+                    {
+                        animeList.map((data) => (
+                        <AnimeCard anime={data} key={data.mal_id} />
+                    ))}
+                  </div>
                 )}
                 <div className={"flex-row space-evenly"}>
                     <button
@@ -98,23 +99,6 @@ export const Home: FC = () => {
                     </button>
                 </div>
             </div>
-            <br></br>
-            <br></br>
-            {searching && (
-              <div className={"flex-row space-evenly anime-list"}>
-                {searchedAnime.map((data) => (
-                  <AnimeCard anime={data} key={data.mal_id} />
-                ))}
-              </div>
-            )}
-            {!searching && (
-              <div className={"flex-row space-evenly anime-list"}>
-                {
-                  animeList.map((data) => (
-                  <AnimeCard anime={data} key={data.mal_id} />
-                ))}
-              </div>
-            )}
         </div>
     );
 };
