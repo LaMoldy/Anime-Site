@@ -1,6 +1,8 @@
-import { FC, useState } from "react";
-import { ROUTES } from "../../App";
-import "./hamburger.css";
+import './hamburger.css';
+
+import { FC, useState } from 'react';
+
+import { ROUTES } from '../../App';
 
 export const Hamburger: FC = () => {
     const [isDisplayed, setIsDisplayed] = useState(false);
@@ -17,12 +19,6 @@ export const Hamburger: FC = () => {
                         <ul>
                             <li>
                                 <a href={ROUTES.home}>Home</a>
-                            </li>
-                            <li>
-                                <a href={ROUTES.watchlist}>Watchlist</a>
-                            </li>
-                            <li>
-                                <a href={ROUTES.recommended}>Recommended</a>
                             </li>
                             <li onClick={toggleMenu}>
                                 <p className={"mouse-pointer"}><b>Close</b></p>
