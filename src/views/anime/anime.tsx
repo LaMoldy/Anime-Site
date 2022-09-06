@@ -9,6 +9,10 @@ import { defaultMALAnime } from '../../services/defaultValues';
 import { Mal } from '../../services/mal';
 import { MALAnime } from '../../utils/malTypes';
 
+interface jsonData {
+    id: string[]
+}
+
 export const AnimePage: FC = () => {
     const [anime, setAnime] = useState<MALAnime>(defaultMALAnime);
     const [isInWatchlist, setIsInWatchlist] = useState(false);
@@ -16,7 +20,12 @@ export const AnimePage: FC = () => {
     const {id} = useParams();
 
     const checkWatchlist = useCallback(() => {
-       let watchlist = localStorage.getItem("id"); 
+       let watchlist: jsonData = JSON.parse(localStorage.getItem("id")!);
+       watchlist.id.forEach(value => {
+            if (value === id!) {
+                setIsInWatchlist(true);
+            }
+       })
     }, [setIsInWatchlist, id]);
 
     const getAnime = useCallback(async () => {
@@ -33,14 +42,22 @@ export const AnimePage: FC = () => {
     }, [getAnime, checkWatchlist]);
 
     function addWatchlist() {
-        //localStorage.setItem("id", JSON.stringify(array));
+        let array: jsonData = {
+            id: []
+        };
+        array.id.push(id!)
+        localStorage.setItem("id", JSON.stringify(array));
 
         setIsInWatchlist(true);
     }
 
     function removeFromWatchlist() {
-        const newList = json.id.filter(value => value !== anime.mal_id.toString())
-        json.id = newList;
+        let newList: jsonData = JSON.parse(localStorage.getItem("id")!);
+
+        newList.id = newList.id.filter(value => value !== id);
+        
+        localStorage.setItem("id", JSON.stringify(newList));
+
         setIsInWatchlist(false);
     }
 
