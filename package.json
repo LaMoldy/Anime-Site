@@ -20,6 +20,7 @@
     "concurrently": "^7.3.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
+    "fs": "^0.0.1-security",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "m3u8-parser": "^5.0.0",

@@ -3,7 +3,7 @@ import './recommendationsPage.css';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { AnimeCard } from '../../components/anime-card';
+import { AnimeCard } from '../../components/anime-card/anime-card';
 import { Hamburger } from '../../components/hamburger/hamburger';
 import { Mal } from '../../services/mal';
 import { MALRecommended } from '../../utils/malTypes';

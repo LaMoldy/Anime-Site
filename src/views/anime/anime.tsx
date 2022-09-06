@@ -11,18 +11,38 @@ import { MALAnime } from '../../utils/malTypes';
 
 export const AnimePage: FC = () => {
     const [anime, setAnime] = useState<MALAnime>(defaultMALAnime);
+    const [isInWatchlist, setIsInWatchlist] = useState(false);
+
     const {id} = useParams();
+
+    const checkWatchlist = useCallback(() => {
+       let watchlist = localStorage.getItem("id"); 
+    }, [setIsInWatchlist, id]);
 
     const getAnime = useCallback(async () => {
         if (typeof id === "string") {
             const res = await Mal.getAnimeById(Number.parseInt(id));
             setAnime(res);
+
         }
     }, [setAnime, id]);
 
     useEffect(() => {
         getAnime()
-    }, [getAnime]);
+        checkWatchlist();
+    }, [getAnime, checkWatchlist]);
+
+    function addWatchlist() {
+        //localStorage.setItem("id", JSON.stringify(array));
+
+        setIsInWatchlist(true);
+    }
+
+    function removeFromWatchlist() {
+        const newList = json.id.filter(value => value !== anime.mal_id.toString())
+        json.id = newList;
+        setIsInWatchlist(false);
+    }
 
     return (
         <div>
@@ -45,7 +65,12 @@ export const AnimePage: FC = () => {
                 </div>
             </div>
             <div className="page-buttons">
-                <a className="btn">Add to Watchlist</a>
+                {!isInWatchlist &&
+                    <a className="btn" onClick={addWatchlist}>Add to Watchlist</a>
+                }
+                {isInWatchlist && 
+                    <a className="btn" onClick={removeFromWatchlist}>Remove from Watchlist</a>
+                }
                 <a className="btn" href={ROUTETO.routeToRecommendations(anime.mal_id.toString())}>Recommendations</a>
             </div>
         </div>

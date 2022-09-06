@@ -7,6 +7,7 @@ import { AnimePage } from './views/anime/anime';
 import { Home } from './views/home/home';
 import { RecommendationsPage } from './views/recommendationsPage/recommendationsPage';
 import { RecommendedPage } from './views/recommendedPage/recommendedPage';
+import { WatchlistPage } from './views/watchlist/watchlist';
 
 export const ROUTES = {
     home: "/",
@@ -30,6 +31,7 @@ const App: FC = () => {
                 <Route path={ROUTES.animePage} element={<AnimePage />} />
                 <Route path={ROUTES.recommended} element={<RecommendedPage /> } />
                 <Route path={ROUTES.recommendations} element={<RecommendationsPage />} />
+                <Route path={ROUTES.watchlist} element={<WatchlistPage />} />
             </Routes>
         </BrowserRouter>
     );

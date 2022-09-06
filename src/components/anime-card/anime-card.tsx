@@ -1,7 +1,8 @@
-import { FC } from "react";
-import { MALAnime, MALImage } from "../utils/malTypes";
-import {ROUTETO} from "../App";
-import "./anime-card.css";
+import './anime-card.css';
+
+import { FC } from 'react';
+
+import { ROUTETO } from '../../App';
 
 interface AnimeProps {
     image: string,

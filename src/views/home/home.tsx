@@ -1,10 +1,11 @@
-import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
-import { ROUTES } from "../../App";
-import { AnimeCard } from "../../components/anime-card";
-import { Hamburger } from "../../components/hamburger/hamburger";
-import { Mal } from "../../services/mal";
-import { MALAnime } from "../../utils/malTypes";
-import "./home.css";
+import './home.css';
+
+import { ChangeEvent, FC, useCallback, useEffect, useState } from 'react';
+
+import { AnimeCard } from '../../components/anime-card/anime-card';
+import { Hamburger } from '../../components/hamburger/hamburger';
+import { Mal } from '../../services/mal';
+import { MALAnime } from '../../utils/malTypes';
 
 export const Home: FC = () => {
     const [searchedAnime, setSearchedAnime] = useState<MALAnime[]>([]);

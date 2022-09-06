@@ -2,7 +2,7 @@ import './recommendedPage.css';
 
 import { FC, useCallback, useEffect, useState } from 'react';
 
-import { AnimeCard } from '../../components/anime-card';
+import { AnimeCard } from '../../components/anime-card/anime-card';
 import { Hamburger } from '../../components/hamburger/hamburger';
 import { MALRecommended } from '../../utils/malTypes';
 
