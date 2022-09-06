@@ -9,7 +9,7 @@ import { defaultMALAnime } from '../../services/defaultValues';
 import { Mal } from '../../services/mal';
 import { MALAnime } from '../../utils/malTypes';
 
-interface jsonData {
+interface storageData {
     id: string[]
 }
 
@@ -20,7 +20,7 @@ export const AnimePage: FC = () => {
     const {id} = useParams();
 
     const checkWatchlist = useCallback(() => {
-       let watchlist: jsonData = JSON.parse(localStorage.getItem("id")!);
+       let watchlist: storageData = JSON.parse(localStorage.getItem("id")!);
        watchlist.id.forEach(value => {
             if (value === id!) {
                 setIsInWatchlist(true);
@@ -42,9 +42,10 @@ export const AnimePage: FC = () => {
     }, [getAnime, checkWatchlist]);
 
     function addWatchlist() {
-        let array: jsonData = {
+        let array: storageData = {
             id: []
         };
+
         array.id.push(id!)
         localStorage.setItem("id", JSON.stringify(array));
 
@@ -52,8 +53,7 @@ export const AnimePage: FC = () => {
     }
 
     function removeFromWatchlist() {
-        let newList: jsonData = JSON.parse(localStorage.getItem("id")!);
-
+        let newList: storageData = JSON.parse(localStorage.getItem("id")!);
         newList.id = newList.id.filter(value => value !== id);
         
         localStorage.setItem("id", JSON.stringify(newList));
