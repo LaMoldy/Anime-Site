@@ -1,17 +1,22 @@
-import './recommendedPage.css';
+import './recommendationsPage.css';
 
 import { FC, useCallback, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { AnimeCard } from '../../components/anime-card';
 import { Hamburger } from '../../components/hamburger/hamburger';
+import { Mal } from '../../services/mal';
 import { MALRecommended } from '../../utils/malTypes';
 
-export const RecommendedPage: FC = () => {
+export const RecommendationsPage: FC = () => {
     const [recommendedAnime, setRecommendedAnime] = useState<MALRecommended[]>([]);
+    const { id } = useParams();
 
     const fetchData = useCallback(async () => {
-        //const animes = await Mal.getRecommendedAnime();
-        //setRecommendedAnime(animes);
+      if (typeof id === "string") {
+        const res = await Mal.getRecommendedAnime(id);
+        setRecommendedAnime(res);
+      }
     }, [setRecommendedAnime]);
 
     useEffect(() => {
@@ -37,4 +42,3 @@ export const RecommendedPage: FC = () => {
         </div>
     );
 }
-

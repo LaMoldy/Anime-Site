@@ -46,3 +46,20 @@ a{
 a:hover{
     color: #a7a499;
 }
+
+.btn {
+    padding: 7px;
+    width: 180px;
+    background-color: grey;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.page-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}

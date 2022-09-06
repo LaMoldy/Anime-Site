@@ -1,0 +1,19 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.space-evenly {
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.page-title {
+  margin-bottom: 15px;
+}

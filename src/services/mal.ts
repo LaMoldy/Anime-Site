@@ -1,5 +1,6 @@
-import axios from "axios";
-import {MALAnime} from "../utils/malTypes";
+import axios from 'axios';
+
+import { MALAnime } from '../utils/malTypes';
 
 export class Mal {
     private static BASE_URL: string = "https://api.jikan.moe/v4";
@@ -27,8 +28,8 @@ export class Mal {
         return anime;
     }
 
-    public static async getRecommendedAnime() {
-        const response = await axios.get(`${this.BASE_URL}/anime/1/recommendations`);
+    public static async getRecommendedAnime(id: string) {
+        const response = await axios.get(`${this.BASE_URL}/anime/${id}/recommendations`);
         const { data: anime } = response.data;
         return anime;
     }

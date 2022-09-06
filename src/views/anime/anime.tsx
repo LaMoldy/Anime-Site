@@ -1,10 +1,13 @@
-import {FC, useCallback, useEffect, useState} from "react";
-import {Mal} from "../../services/mal";
-import {useParams} from "react-router-dom";
-import {MALAnime} from "../../utils/malTypes";
-import "./anime.css";
-import {defaultMALAnime} from "../../services/defaultValues";
-import { Hamburger } from "../../components/hamburger/hamburger";
+import './anime.css';
+
+import { FC, useCallback, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+import { ROUTETO } from '../../App';
+import { Hamburger } from '../../components/hamburger/hamburger';
+import { defaultMALAnime } from '../../services/defaultValues';
+import { Mal } from '../../services/mal';
+import { MALAnime } from '../../utils/malTypes';
 
 export const AnimePage: FC = () => {
     const [anime, setAnime] = useState<MALAnime>(defaultMALAnime);
@@ -40,6 +43,10 @@ export const AnimePage: FC = () => {
                 <div className="anime-syn">
                     <p>{anime?.synopsis}</p>
                 </div>
+            </div>
+            <div className="page-buttons">
+                <a className="btn">Add to Watchlist</a>
+                <a className="btn" href={ROUTETO.routeToRecommendations(anime.mal_id.toString())}>Recommendations</a>
             </div>
         </div>
     )
